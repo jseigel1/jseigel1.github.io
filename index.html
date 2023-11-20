@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantitative Finance</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file here -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            opacity: 0; /* Set initial opacity to 0 */
+            animation: fade-in 1s ease-in-out forwards; /* Apply fade-in animation */
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer ul li {
+            margin-right: 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Quantitative Finance</h1>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Discover our wide range of quantitative finance services designed to help you make informed investment decisions.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Learn more about our team of experts and our mission to provide cutting-edge quantitative finance solutions.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us at info@quantitativefinance.com</p>
+        <ul>
+            <li><a href="https://twitter.com/quantfinance">Follow us on Twitter</a></li>
+            <li><a href="https://linkedin.com/company/quantitativefinance">Connect with us on LinkedIn</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // JavaScript code
+        function showAlert() {
+            var messages = [
+                "Welcome to Quantitative Finance! Get ready to crunch some numbers and make those investments!",
+                "Hey there! Are you ready to unleash your inner finance geek and conquer the market?",
+                "Hold on tight! We're about to take you on a wild ride through the world of data-driven investing!",
+                "Attention! Prepare yourself for a mind-blowing journey into the realm of quantitative finance!",
+                "Buckle up! We're about to dive into the exciting world where numbers meet money!"
+            ];
+            var randomIndex = Math.floor(Math.random() * messages.length);
+            alert(messages[randomIndex]);
+        }
+    </script>
+    <script>
+        // Call the showAlert function when the page loads
+        window.onload = showAlert;
+    </script>
+</body>
+</html>
