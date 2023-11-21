@@ -182,6 +182,49 @@
             font-size: 18px;
             margin-bottom: 20px;
         }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .slideshow-container .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .slideshow-container .slide.active {
+            display: block;
+        }
+
+        /* Form Validation Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -200,11 +243,33 @@
         <section id="services">
             <h2>Our Services</h2>
             <p>Discover our wide range of quantitative finance services designed to help you make informed investment decisions.</p>
+            <div class="slideshow-container">
+                <img class="slide active" src="service1.jpg" alt="Service 1">
+                <img class="slide" src="service2.jpg" alt="Service 2">
+                <img class="slide" src="service3.jpg" alt="Service 3">
+            </div>
         </section>
 
         <section id="about">
             <h2>About Us</h2>
             <p>Learn more about our team of experts and our mission to provide cutting-edge quantitative finance solutions.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </section>
     </main>
 
@@ -230,8 +295,64 @@
             var randomIndex = Math.floor(Math.random() * messages.length);
             alert(messages[randomIndex]);
         }
-    </script>
-    <script>
+
+        // Slideshow code
+        var slides = document.querySelectorAll('.slide');
+        var currentSlide = 0;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(function() {
+            showSlide(currentSlide + 1);
+        }, 3000);
+
+        // Form validation code
+        var contactForm = document.getElementById('contactForm');
+        var nameInput = document.getElementById('name');
+        var emailInput = document.getElementById('email');
+        var nameError = document.getElementById('nameError');
+        var emailError = document.getElementById('emailError');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var isValid = true;
+
+            if (nameInput.value.trim() === '') {
+                nameError.textContent = 'Name is required';
+                isValid = false;
+            } else {
+                nameError.textContent = '';
+            }
+
+            if (emailInput.value.trim() === '') {
+                emailError.textContent = 'Email is required';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            if (isValid) {
+                // Submit the form or perform other actions
+                alert('Form submitted successfully!');
+                contactForm.reset();
+            }
+        });
+
+        // Smooth scrolling code
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
         // Call the showAlert function when the page loads
         window.onload = showAlert;
     </script>
