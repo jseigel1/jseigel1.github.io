@@ -244,19 +244,26 @@
         </nav>
     </header>
 
-    <main>
-        <section id="services" style="overflow: hidden;">
-            <h2>Our Services</h2>
-            <p>Discover our wide range of quantitative finance services designed to help you make informed investment
-                decisions.</p>
-            <div class="slideshow-container">
-                <img class="slide active" src="qf.webp" alt="Service 1">
-                <img class="slide" src="qf2.jpeg" alt="Service 2">
-                <img class="slide" src="qf3.jpeg" alt="Service 3">
-            </div>
-        </section>
+    <style>
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
 
-        <section id="about">
+        .slideshow-container .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            object-fit: contain; /* Updated property */
+        }
+
+        .slideshow-container .slide.active {
+            display: block;
+        }
+    </style>
             <h2>About Us</h2>
             <p>Learn more about our team of experts and our mission to provide cutting-edge quantitative finance
                 solutions.</p>
